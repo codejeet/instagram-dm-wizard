@@ -25,7 +25,7 @@ export default function Home() {
 	  "yesAds": {
 		"message": "That's great to hear! Are you happy with the results you’re seeing from your ads, or do you see room for improvement?",
 		"actions": {
-		  "Need improvement": "improvementNeeded",
+		  "My ads Need improvement": "improvementNeeded",
 		  "Happy with results": "happyWithResults"
 		}
 	  },
