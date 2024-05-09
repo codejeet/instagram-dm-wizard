@@ -32,15 +32,15 @@ export default function Home() {
 	  "improvementNeeded": {
 		"message": "We can definitely help optimize your ads to get better results. Would you like to see how we could enhance your current campaigns?",
 		"actions": {
-		  "Yes, interested": "bookCall",
-		  "Not interested": "start"
+		  "Yes, interested": "exploreServices",
+		  "Not interested (Proceed to Next Lead)": "start"
 		}
 	  },
 	  "happyWithResults": {
-		"message": "That's wonderful to hear! If you're ever looking to explore additional strategies or expand your reach, feel free to check out our services.",
+		"message": "That's wonderful to hear! If you're ever looking to explore additional strategies or expand your reach, feel free to check out our services at https://scalesystem.ai/",
 		"actions": {
 		  "Explore services": "exploreServices",
-		  "No thanks": "start"
+		  "No thanks (Proceed to Next Lead)": "start"
 		}
 	  },
 	  "bookCall": {
@@ -57,35 +57,35 @@ export default function Home() {
 		}
 	  },
 	  "showInterest": {
-		"message": "We'd love to show you the potential. You can learn more about our services and success stories here: https://calendly.com/d/2p3-hwf-ydb/scalesystem-ai-business-audit-kickoff-call?month=2024-05",
+		"message": "We'd love to show you the potential. You can learn more about our services and success stories here, If it sounds convincing, I encourge you to book a call with us: https://scalesystem.ai/ ",
 		"actions": {
-		  "Book a call": "bookCallInterested",
-		  "Maybe later": "start"
+		  "I'd like to Book a call": "bookCallInterested",
+		  "Maybe later (Proceed to Next Lead)": "start"
 		}
 	  },
 	  "noInterest": {
-		"message": "No worries at all! If you ever reconsider or want to explore other ways to enhance your medical spa, feel free to reach out or visit our site.",
+		"message": "No worries at all! If you ever reconsider or want to explore other ways to enhance your medical spa, feel free to reach out or visit our site. https://scalesystem.ai/",
 		"actions": {
-		  "Reconsider": "start",
 		  "End Conversation": "end"
 		}
 	  },
 	  "bookCallInterested": {
 		"message": "If you think this could be a good fit, let’s discuss in more detail! Here’s where you can book a call with us: https://calendly.com/d/2p3-hwf-ydb/scalesystem-ai-business-audit-kickoff-call?month=2024-05",
 		"actions": {
-		  "Back to Start": "start"
+		  "Back to Start (Proceed to Next Lead)": "start"
 		}
 	  },
 	  "exploreServices": {
-		"message": "Here are our services: https://calendly.com/d/2p3-hwf-ydb/scalesystem-ai-business-audit-kickoff-call?month=2024-05. Take your time to explore and let us know if anything catches your eye!",
+		"message": "We run ads on Meta, Tiktok, and Google, as well as other unique offerings like Ai-powered content generation, google maps SEO ranking, among others. Our pricing is flexible based on your circumstances. We have a guarantee, so that if you don't make more money than you spend with us within 3 months, you get 3 more months free. To book at call with us and to see our success stories, check out our website at https://scalesystem.ai/. ",
 		"actions": {
-		  "Book a call to discuss": "bookCall",
-		  "Return to main menu": "start"
+		  "Return to main menu (Proceed to Next Lead)": "start"
 		}
 	  },
 	  "end": {
 		"message": "Thank you for your time! Don't hesitate to contact us if you have any more questions. Have a great day!",
-		"actions": {}
+		"actions": {
+		  "Return to main menu (Proceed to Next Lead)": "start"
+		}	  
 	  }
 	}
 
@@ -95,11 +95,17 @@ export default function Home() {
         Gulia's Instagram DM Assistant
       </Typography>
       <Paper elevation={3} sx={{ padding: 2 }}>
+	    <Box mt={2}>
+          <Button variant="contained" onClick={() => handleMessageCopy(flow[stage].message)}>
+            Click to Copy message
+        </Button>
+        </Box>
+		<Box mt={2}>
         <Typography variant="body1" gutterBottom>
           {flow[stage].message}
         </Typography>
 		<Typography variant="h5" component="h1" gutterBottom>
-			Select client's reponse below:
+			Select leads's reponse below:
 		</Typography>
         <Grid container spacing={2} justifyContent="center">
           {Object.entries(flow[stage].actions).map(([text, nextStage]) => (
@@ -109,16 +115,10 @@ export default function Home() {
               </Button>
             </Grid>
           ))}
+
         </Grid>
-        <Box mt={2}>
-          <Button variant="outlined" onClick={() => handleMessageCopy(flow[stage].message)}>
-            Click to Copy message
-          </Button>
-        </Box>
-		<Box mt={2}>
-		  <Button variant="contained" onClick={() => setStage("start")}>
-              Start Over
-          </Button>
+
+
 		</Box>
       </Paper>
     </Container>
