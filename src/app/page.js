@@ -44,7 +44,7 @@ export default function Home() {
 		}
 	  },
 	  "bookCall": {
-		"message": "Awesome! Here’s a link to book a quick call so we can discuss further: [Insert Scheduling Link]",
+		"message": "Awesome! Here’s a link to book a quick call so we can discuss further: https://calendly.com/d/2p3-hwf-ydb/scalesystem-ai-business-audit-kickoff-call?month=2024-05",
 		"actions": {
 		  "Back to Start": "start"
 		}
@@ -57,7 +57,7 @@ export default function Home() {
 		}
 	  },
 	  "showInterest": {
-		"message": "We'd love to show you the potential. You can learn more about our services and success stories here: [Insert Link]",
+		"message": "We'd love to show you the potential. You can learn more about our services and success stories here: https://calendly.com/d/2p3-hwf-ydb/scalesystem-ai-business-audit-kickoff-call?month=2024-05",
 		"actions": {
 		  "Book a call": "bookCallInterested",
 		  "Maybe later": "start"
@@ -71,13 +71,13 @@ export default function Home() {
 		}
 	  },
 	  "bookCallInterested": {
-		"message": "If you think this could be a good fit, let’s discuss in more detail! Here’s where you can book a call with us: [Insert Scheduling Link]",
+		"message": "If you think this could be a good fit, let’s discuss in more detail! Here’s where you can book a call with us: https://calendly.com/d/2p3-hwf-ydb/scalesystem-ai-business-audit-kickoff-call?month=2024-05",
 		"actions": {
 		  "Back to Start": "start"
 		}
 	  },
 	  "exploreServices": {
-		"message": "Here are our services: [Link to services]. Take your time to explore and let us know if anything catches your eye!",
+		"message": "Here are our services: https://calendly.com/d/2p3-hwf-ydb/scalesystem-ai-business-audit-kickoff-call?month=2024-05. Take your time to explore and let us know if anything catches your eye!",
 		"actions": {
 		  "Book a call to discuss": "bookCall",
 		  "Return to main menu": "start"
