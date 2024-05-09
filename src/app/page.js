@@ -94,16 +94,22 @@ export default function Home() {
       <Typography variant="h4" component="h1" gutterBottom>
         Gulia's Instagram DM Assistant
       </Typography>
-      <Paper elevation={3} sx={{ padding: 2 }}>
-	    <Box mt={2}>
-          <Button variant="contained" onClick={() => handleMessageCopy(flow[stage].message)}>
-            Click to Copy message
-        </Button>
-        </Box>
+      <Paper elevation={3} sx={{ padding: 4 }}>
+	    <Grid container spacing={2} justifyContent="center">
+			<Button variant="contained" color="primary" onClick={() => setStage("start")}>
+				Return To Main Menu
+			</Button>
+		</Grid>
 		<Box mt={2}>
         <Typography variant="body1" gutterBottom>
           {flow[stage].message}
         </Typography>
+		    <Grid container spacing={2} sx={{ padding: 4 }} justifyContent="center">
+
+			<Button variant="contained" onClick={() => handleMessageCopy(flow[stage].message)}>
+				Click to Copy message
+			</Button>
+        		</Grid>
 		<Typography variant="h5" component="h1" gutterBottom>
 			Select leads's reponse below:
 		</Typography>
@@ -117,8 +123,6 @@ export default function Home() {
           ))}
 
         </Grid>
-
-
 		</Box>
       </Paper>
     </Container>
